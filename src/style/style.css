@@ -1,8 +1,235 @@
-* {
-    box-sizing: border-box;
-    color: white;
+:root {
+    --section-padding-top: 50px;
+    --section-padding-side: 90px;
+    --upper-right-icon-width: 60px;
+    --bright: #D0D0D0;
 }
 
-#container {
+* {
+    box-sizing: border-box;
+    color: var(--bright);
+}
+
+body {
+    font-size: 14px;
     background-color: black;
+}
+
+div#container {
+    background-image: url(../img/light-background.png);
+    background-position: 50% 57%;
+    background-size: 180%;
+}
+
+header {
+    height: 100vh;
+    padding: 60px var(--section-padding-side) 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav>img {
+    width: var(--upper-right-icon-width);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav ul li {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+}
+
+.icon {
+    background-size: cover;
+    background-position: center;
+    display: block;
+}
+
+nav ul li .icon {
+    opacity: .5;
+    width: 20px;
+    height: 20px;
+    transition: 0.3s;
+}
+
+nav ul li .icon:hover {
+    opacity: 1
+}
+
+.icon-instagram {
+    background-image: url(../img/icon/instagram.svg);
+}
+
+.icon-facebook {
+    background-image: url(../img/icon/facebook-square.svg);
+}
+
+.icon-linkedin {
+    background-image: url(../img/icon/linkedin.svg);
+}
+
+.icon-mail {
+    background-image: url(../img/icon/envelope-solid.svg);
+}
+
+header main {
+    padding: var(--section-padding-top) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: calc(100% - var(--upper-right-icon-width));
+    position: relative;
+}
+
+header main img {
+    min-width: 160px;
+    max-width: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(calc(-50% - 30px));
+}
+
+header main .icon {
+    width: 30px;
+    height: 30px;
+}
+
+.icon-chevron-down {
+    background-image: url(../img/icon/chevron.svg);
+}
+
+header+main {
+    padding: var(--section-padding-top) var(--section-padding-side);
+
+}
+
+header+main header {
+    height: auto;
+    padding: 30px 0 0;
+    margin-bottom: 130px;
+}
+
+blockquote {
+    color: #ffffff;
+    font-size: 1.2em;
+    font-family: stratos-lights, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3em;
+    font-family: aktiv-grotesk, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 40px;
+}
+
+p {
+    font-size: 2.4em;
+    font-family: aktiv-grotesk, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 45px;
+}
+
+legend {
+    margin-bottom: 50px;
+}
+
+legend h2 {
+    font-size: 3em;
+    font-family: aktiv-grotesk, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+legend h3 {
+    font-size: 1.2em;
+    font-family: aktiv-grotesk, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+#name {
+    display: flex;
+    margin-bottom: 35px;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--bright);
+    -webkit-box-shadow: 0 0 0px 0px #000 inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+::placeholder {
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--bright);
+}
+
+#userinfo input {
+    color: var(--bright);
+    background-color: transparent;
+    border: none;
+    border-bottom: var(--bright) 1px solid;
+    width: 100%;
+    padding: 0 0 10px 0;
+    margin-right: 10px;
+    font-size: 6.4em;
+    font-family: aktiv-grotesk, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+#name input {
+    width: 50%;
+}
+
+#name input+input {
+    margin-left: 10px;
+}
+
+#userinfo fieldset+input {
+    margin-bottom: 35px;
+}
+
+#userinfo input[type="email"] {
+    margin-bottom: 35px;
+}
+
+#userinfo input[type="submit"] {
+    border: none;
 }
