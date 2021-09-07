@@ -53,14 +53,15 @@ nav ul li {
     display: block;
 }
 
-nav ul li .icon {
+nav ul li .icon,
+footer ul li .icon {
     opacity: .5;
     width: 20px;
     height: 20px;
     transition: 0.3s;
 }
 
-nav ul li .icon:hover {
+.icon:hover {
     opacity: 1
 }
 
@@ -74,6 +75,18 @@ nav ul li .icon:hover {
 
 .icon-linkedin {
     background-image: url(../img/icon/linkedin.svg);
+}
+
+.icon-instagram-dark {
+    background-image: url(../img/icon/instagram-dark.svg);
+}
+
+.icon-facebook-dark {
+    background-image: url(../img/icon/facebook-square-dark.svg);
+}
+
+.icon-linkedin-dark {
+    background-image: url(../img/icon/linkedin-dark.svg);
 }
 
 .icon-mail {
@@ -150,6 +163,10 @@ p {
     line-height: 45px;
 }
 
+#userinfo {
+    overflow: auto;
+}
+
 legend {
     margin-bottom: 50px;
 }
@@ -207,7 +224,6 @@ select:-webkit-autofill:focus {
     border-bottom: var(--bright) 1px solid;
     width: 100%;
     padding: 0 0 10px 0;
-    margin-right: 10px;
     font-size: 6.4em;
     font-family: aktiv-grotesk, sans-serif;
     font-weight: 700;
@@ -216,6 +232,7 @@ select:-webkit-autofill:focus {
 
 #name input {
     width: 50%;
+    margin-right: 10px;
 }
 
 #name input+input {
@@ -230,6 +247,167 @@ select:-webkit-autofill:focus {
     margin-bottom: 35px;
 }
 
-#userinfo input[type="submit"] {
-    border: none;
+#interests {
+    display: flex;
+    margin-bottom: 35px;
 }
+
+#interests input {
+    display: none;
+}
+
+#interests label {
+    width: calc(100%/3);
+    background-color: #434344;
+    font-size: 1.57em;
+    font-family: aktiv-grotesk, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    padding: 16px 16px 16px 30px;
+    min-height: 300px;
+    color: rgba(208, 208, 208, 0.5);
+}
+
+#interests input:checked+label {
+    background-color: rgba(100%, 100%, 100%, 0.5);
+    color: var(--bright);
+}
+
+#interests input:checked+label div {
+    background-color: #D0D0D0;
+    border-color: #ffffff;
+}
+
+#interests label div {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: #818181 1px solid;
+    margin-left: auto;
+    margin-bottom: 10px;
+}
+
+#submit {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#userinfo input[type="submit"] {
+    padding: 0 60px 0 0;
+    width: max-content;
+    border: none;
+    margin: 0;
+    font-size: 2.9em;
+    font-family: aktiv-grotesk, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#userinfo input[type="submit"]:hover,
+#userinfo input[type="submit"]+label:hover {
+    cursor: pointer;
+}
+
+#userinfo input[type="submit"]+label {
+    display: block;
+    width: 70px;
+    height: 70px;
+    background-image: url(../img/icon/arrow-right-circle.svg);
+}
+
+footer {
+    display: flex;
+    position: relative;
+    background-color: var(--bright);
+    padding: var(--section-padding-top) var(--section-padding-side);
+    justify-content: space-between;
+}
+
+.icon-swivvle {
+    background-image: url(../img/logo/small/Icon-whiteLORES.png);
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    border-radius: 50%;
+    background-color: black;
+    transform: translate(-50%, -50%);
+    padding: 3px;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position-x: 3px;
+}
+
+footer img {
+    width: 80px;
+    padding-bottom: 100px;
+}
+
+#footer-info {
+    display: flex;
+}
+
+#footer-info section:first-child {
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+#footer-info section:first-child div+div {
+    margin-top: auto;
+}
+
+footer h4 {
+    color: black;
+    font-family: stratos-lights, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    margin-bottom: 25px;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer ul {
+    display: flex;
+}
+
+footer ul li {
+    margin-right: 10px;
+}
+
+footer button,
+footer span,
+footer a {
+    background-color: transparent;
+    border: none;
+    color: #767676;
+    font-family: aktiv-grotesk, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+footer button.selected {
+    color: black;
+}
+
+@media only screen and (max-width: 1024px) {
+    :root {
+        --section-padding-top: 50px;
+        --section-padding-side: 90px;
+        --upper-right-icon-width: 40px;
+        --bright: #D0D0D0;
+    }
+
+    #container {
+        background-repeat: no-repeat;
+        background-size: 250%;
+    }
+
+    #interests label {
+        width: 100%;
+    }
