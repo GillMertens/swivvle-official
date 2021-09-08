@@ -354,6 +354,10 @@ footer img {
     flex-direction: column;
 }
 
+#footer-info section:first-child div:first-child {
+    padding-bottom: 50px;
+}
+
 #footer-info section:first-child div+div {
     margin-top: auto;
 }
@@ -397,17 +401,180 @@ footer button.selected {
 
 @media only screen and (max-width: 1024px) {
     :root {
-        --section-padding-top: 50px;
-        --section-padding-side: 90px;
-        --upper-right-icon-width: 40px;
+        --upper-right-icon-width: 60px;
+    }
+
+    div#container {
+        background-repeat: no-repeat;
+        background-size: 250%;
+        background-position: 50% -400px;
+    }
+
+    nav ul li,
+    nav ul li .icon,
+    footer ul li .icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    header main .icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    header main img {
+        max-width: 450px;
+    }
+
+    #name {
+        flex-wrap: wrap;
+        margin: 0;
+    }
+
+    #name input {
+        width: 100%;
+        margin: 0 0 35px 0 !important;
+    }
+
+    #interests {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #interests label {
+        flex-grow: 1;
+        margin: 5px;
+    }
+
+    footer {
+        flex-direction: column;
+        font-size: 1.5em;
+    }
+
+    footer img {
+        width: 100px;
+        padding: 0 0 75px 0 !important;
+    }
+
+    footer ul li {
+        margin-right: 20px;
+    }
+
+    footer button,
+    footer span {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    :root {
+        --section-padding-top: 25px;
+        --section-padding-side: 30px;
+        --upper-right-icon-width: 60px;
         --bright: #D0D0D0;
     }
 
-    #container {
-        background-repeat: no-repeat;
-        background-size: 250%;
+    #userinfo input {
+        font-size: 4.6em;
+    }
+}
+
+@media only screen and (max-width: 512px) {
+    :root {
+        --section-padding-top: 25px;
+        --section-padding-side: 30px;
+        --upper-right-icon-width: 30px;
+        --bright: #D0D0D0;
+    }
+
+    body {
+        font-size: 10px;
+    }
+
+    p {
+        line-height: 30px;
+    }
+
+    div#container {
+        background-size: 450%;
+        background-position: 50% -200px;
+    }
+
+    header {
+        padding-top: 30px;
+    }
+
+    header main .icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    nav ul li,
+    nav ul li .icon,
+    footer ul li .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    header main img {
+        max-width: 200px;
+    }
+
+    form {
+        margin-bottom: 30px;
+    }
+
+    #userinfo input {
+        font-size: 4.9em;
+    }
+
+    #interests {
+        margin-bottom: 10px;
     }
 
     #interests label {
         width: 100%;
+        min-height: 250px;
+        padding: 16px 16px 16px 16px;
     }
+
+    #interests label div {
+        width: 20px;
+        height: 20px;
+    }
+
+    #userinfo input[type="submit"] {
+        padding: 0 30px 0 0;
+        font-size: 2.5em;
+    }
+
+    #userinfo input[type="submit"]+label {
+        width: 40px;
+        height: 40px;
+    }
+
+    #footer-info {
+        display: block;
+
+    }
+
+    #footer-info section:first-child {
+        margin: 0 0 30px 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #footer-info section:first-child div:first-child {
+        padding-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 412px) {
+    #interests label {
+        font-size: 2em;
+    }
+
+    #userinfo input {
+        font-size: 2.9em;
+    }
+}
